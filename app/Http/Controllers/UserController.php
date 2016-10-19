@@ -6,8 +6,7 @@ use App\User;
 
 class UserController extends Controller {
     
-    public function postSignup(Request $request) {
-        $name = $request['name'];
+    public function postSignup(Request $request) {        
         $email = $request['email'];
         $password = bcrypt($request['password']);
         

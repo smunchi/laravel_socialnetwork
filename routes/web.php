@@ -19,7 +19,7 @@ Route::post('/signup','UserController@postSignup')->name('signup');
 
 Route::post('/signin', 'UserController@postSignin')->name('signin');
 
-
+Route::post('/createpost', 'PostController@postCreatePost')->name('post.create');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', 'UserController@getDashboard')->name('dashboard');

@@ -8,4 +8,8 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 class User extends Model implements AuthenticatableContract
 {
     use \Illuminate\Auth\Authenticatable;
+    
+    public function posts() {
+        $this->hasMany('App\Post');
+    }
 }

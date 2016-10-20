@@ -8,10 +8,13 @@
 <div class="row">
     <div class="col-md-6">
         <header><h3>What do you have to say?</h3></header>
-        <div class="form-group">
-            <textarea class="form-control" name="new-post" cols="30" rows="4"></textarea>
-        </div>
-        <input type="submit" class="btn btn-primary"/>
+        <form method="post" action="{{route('post.create')}}">
+            <div class="form-group">
+                <textarea class="form-control" name="new-post" cols="30" rows="4"></textarea>
+            </div>
+            <input type="hidden" name="_token" value="{{csrf_token()}}"/>
+            <input type="submit" class="btn btn-primary"/>
+        </form>
     </div>
 </div>
 <div class="row">

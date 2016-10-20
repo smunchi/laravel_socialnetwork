@@ -26,18 +26,25 @@
     </div>
     <div class="col-md-6">
         <h2 style="color:burlywood; font-weight: bold">Sign Up</h2>
+        @if(count($errors)>0)               
+            <ul>
+                @foreach($errors->all() as $error)
+                <li>{{$error}}</li>
+                @endforeach
+            </ul>          
+        @endif
         <form action="{{route('signup')}}" method='post'>
             <div class="form-group">
                 <label for="name">Your Name</label>
-                <input type="text" id='name' name="name" class="form-control"/>
+                <input type="text" id='name' name="name" value="{{Request::old('name')}}" class="form-control"/>
             </div>
             <div class="form-group">
                 <label for="email">Your email</label>
-                <input type="text" name="email" id='email' class="form-control"/>
+                <input type="text" name="email" id='email' value="{{Request::old('email')}}" class="form-control"/>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="text" name="password" id='password' class="form-control"/>
+                <input type="password" name="password" value="{{Request::old('password')}}" id='password' class="form-control"/>
             </div>
             <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
             <div class="form-group">                

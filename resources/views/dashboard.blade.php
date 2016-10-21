@@ -10,7 +10,7 @@
         <header><h3>What do you have to say?</h3></header>
         <form method="post" action="{{route('post.create')}}">
             <div class="form-group">
-                <textarea class="form-control" name="new-post" cols="30" rows="4"></textarea>
+                <textarea class="form-control" name="body" cols="30" rows="4"></textarea>
             </div>
             <input type="hidden" name="_token" value="{{csrf_token()}}"/>
             <input type="submit" class="btn btn-primary"/>

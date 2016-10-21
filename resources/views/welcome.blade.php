@@ -26,13 +26,7 @@
     </div>
     <div class="col-md-6">
         <h2 style="color:burlywood; font-weight: bold">Sign Up</h2>
-        @if(count($errors)>0)               
-            <ul>
-                @foreach($errors->all() as $error)
-                <li>{{$error}}</li>
-                @endforeach
-            </ul>          
-        @endif
+        @include('includes.message-block')        
         <form action="{{route('signup')}}" method='post'>
             <div class="form-group">
                 <label for="name">Your Name</label>

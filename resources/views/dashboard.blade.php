@@ -5,6 +5,9 @@
 @endsection
 
 @section('content')
+
+
+@include('includes.message-block')
 <div class="row">
     <div class="col-md-6">
         <header><h3>What do you have to say?</h3></header>

@@ -23,18 +23,18 @@
 <div class="row">
     <div class="col-md-6">
         <header><h3>What other people say...</h3></header>
+        @foreach($posts as $post)
         <article>
-            <div>lorem ipsum</div>
-            <div>posted by on</div>
-            <div><a href="">like</a> <a href="">Dislike</a> <a href="">Edit</a></div>
+            <div>{{$post->body}}</div>
+            <div>posted by {{$post->user}}</div>
+            <div>
+                <a href="">like</a> 
+                <a href="">Dislike</a> 
+                <a href="">Edit</a>
+            </div>
             <hr/>
-        </article>
-        <article>
-            <div>lorem ipsum</div>
-            <div>posted by on</div>
-            <div><a href="">like</a> <a href="">Dislike</a> <a href="">Edit</a></div>
-            <hr/>
-        </article>        
+        </article>  
+        @endforeach
     </div>
 </div>
 @endsection

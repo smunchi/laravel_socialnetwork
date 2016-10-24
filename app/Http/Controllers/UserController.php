@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Post;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller {
     
     public function getDashboard() {
-        return view('dashboard');
+        $posts = Post::all();
+        return view('dashboard', ['posts'=>$posts]);
     }
     
     public function postSignup(Request $request) {

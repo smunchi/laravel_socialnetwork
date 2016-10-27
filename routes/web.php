@@ -16,11 +16,10 @@ Route::get('/', function () {
 })->name('home');
 
 Route::post('/signup','UserController@postSignup')->name('signup');
-
 Route::post('/signin', 'UserController@postSignin')->name('signin');
-
 Route::post('/createpost', 'PostController@postCreatePost')->name('post.create');
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/dashboard', 'UserController@getDashboard')->name('dashboard');
+    Route::get('/dashboard', 'PostController@getDashboard')->name('dashboard');
+    Route::get('/delete-post/{post_id}', 'PostController@getDeletePost')->name('post.delete');
 });

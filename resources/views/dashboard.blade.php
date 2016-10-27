@@ -26,11 +26,12 @@
         @foreach($posts as $post)
         <article>
             <div>{{$post->body}}</div>
-            <div>posted by {{$post->user}}</div>
+            <div>posted by {{$post->user->email}}</div>
             <div>
                 <a href="">like</a> 
                 <a href="">Dislike</a> 
                 <a href="">Edit</a>
+                <a href="{{route('post.delete', ['post_id'=>$post->id])}}">Delete</a>
             </div>
             <hr/>
         </article>  

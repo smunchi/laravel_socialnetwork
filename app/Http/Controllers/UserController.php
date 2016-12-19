@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller {
     
+    public function getDashboard() {
+        $posts = Post::all();
+        return view('dashboard', ['posts'=>$posts]);
+    }
+    
     public function postSignup(Request $request) {
 
         $this->validate($request, [
